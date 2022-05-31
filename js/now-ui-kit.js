@@ -244,3 +244,49 @@ function zalo() {
         imageUrl: 'images/zalo.jpg'
     })
 };
+
+function downloadCV() {
+    const { value: password } = Swal.fire({
+        title: 'Enter your password',
+        input: 'password',
+        inputLabel: 'Password',
+        inputPlaceholder: 'Enter your password',
+        inputAttributes: {
+            maxlength: 8,
+            autocapitalize: 'off',
+            autocorrect: 'off'
+        }
+    }).then(res => {
+        if (res.isConfirmed) {
+            if (res.value === "1211!@!!") {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Nguyễn Hoàng Anh Khoa',
+                    html:
+                        `<div>
+                        <a href="images/binnerCV.pdf" target="_blank">Tiếng Việt</a> 
+                        </div>
+                        <div>
+                        <a href="images/NguyenHoangAnhKhoa-CV.pdf" target="_blank">Tiếng Anh</a> 
+                        </div>
+                        <div>
+                        <a href="images/binnerCV2.pdf" target="_blank">Tiếng Anh (Rút Gọn)</a> 
+                        </div>
+                        `,
+                })
+            } else {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Something went wrong!',
+                    confirmButtonText: 'Why do I have this issue?'
+                  }).then((result) => {
+                    if (result.isConfirmed) {
+                      window.location.assign('#contact')
+                    }
+                  })
+            }
+           
+        }
+    })
+};
