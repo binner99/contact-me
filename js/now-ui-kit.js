@@ -239,9 +239,9 @@ function debounce(func, wait, immediate) {
 
 function zalo() {
     Swal.fire({
-        title: 'Nguyễn Hoàng Anh Khoa',
-        text: '0916497870',
-        imageUrl: 'images/zalo.jpg'
+        title: 'Nguyễn Anh Kiệt',
+        text: '0944946261',
+        // imageUrl: 'images/zalo.jpg'
     })
 };
 
@@ -280,13 +280,13 @@ function downloadCV() {
                     title: 'Oops...',
                     text: 'Something went wrong!',
                     confirmButtonText: 'Why do I have this issue?'
-                  }).then((result) => {
+                }).then((result) => {
                     if (result.isConfirmed) {
-                      window.location.assign('#contact')
+                        window.location.assign('#contact')
                     }
-                  })
+                })
             }
-           
+
         }
     })
 };
